@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/Extend.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/Extend.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/Extend.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/Extend.syr" 

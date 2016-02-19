@@ -1,0 +1,580 @@
+Release 12.3 - xst M.70d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: MIPS.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MIPS.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MIPS"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : MIPS
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\signext.v\" into library work
+Parsing module <signext>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\regfile.v\" into library work
+Parsing module <regfile>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\nextpc.v\" into library work
+Parsing module <nextpc>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\alu.v\" into library work
+Parsing module <alu>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\mainctrl.v\" into library work
+Parsing module <mainctrl>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\datapath.v\" into library work
+Parsing module <datapath>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\aluctrl.v\" into library work
+Parsing module <aluctrl>.
+Analyzing Verilog file \"\Users\Administrator\Desktop\MIPS\CPU\MIPS.v\" into library work
+Parsing module <MIPS>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <MIPS>.
+
+Elaborating module <mainctrl>.
+
+Elaborating module <aluctrl>.
+
+Elaborating module <datapath>.
+
+Elaborating module <nextpc>.
+
+Elaborating module <regfile>.
+
+Elaborating module <signext>.
+
+Elaborating module <alu>.
+WARNING:HDLCompiler:91 - "\Users\Administrator\Desktop\MIPS\CPU\alu.v" Line 31: Signal <Alu_en> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <MIPS>.
+    Related source file is "/users/administrator/desktop/mips/cpu/mips.v".
+    Summary:
+	no macro.
+Unit <MIPS> synthesized.
+
+Synthesizing Unit <mainctrl>.
+    Related source file is "/users/administrator/desktop/mips/cpu/mainctrl.v".
+    Summary:
+	inferred  11 Multiplexer(s).
+Unit <mainctrl> synthesized.
+
+Synthesizing Unit <aluctrl>.
+    Related source file is "/users/administrator/desktop/mips/cpu/aluctrl.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <aluctrl> synthesized.
+
+Synthesizing Unit <datapath>.
+    Related source file is "/users/administrator/desktop/mips/cpu/datapath.v".
+WARNING:Xst:647 - Input <instr<31:26>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <pcReg>.
+    Found 32-bit register for signal <pc_dp>.
+    Found 32-bit adder for signal <pc_dp[31]_GND_4_o_add_0_OUT> created at line 47.
+    Found 32-bit 3-to-1 multiplexer for signal <Jr_busA[31]_wide_mux_6_OUT> created at line 72.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  64 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <datapath> synthesized.
+
+Synthesizing Unit <nextpc>.
+    Related source file is "/users/administrator/desktop/mips/cpu/nextpc.v".
+    Found 30-bit adder for signal <brPc> created at line 28.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplexer(s).
+Unit <nextpc> synthesized.
+
+Synthesizing Unit <regfile>.
+    Related source file is "/users/administrator/desktop/mips/cpu/regfile.v".
+    Found 1024-bit register for signal <n0049[1023:0]>.
+    Found 32-bit 32-to-1 multiplexer for signal <RA[4]_gr[31][31]_wide_mux_36_OUT> created at line 28.
+    Found 32-bit 32-to-1 multiplexer for signal <RB[4]_gr[31][31]_wide_mux_39_OUT> created at line 29.
+    Summary:
+	inferred 1024 D-type flip-flop(s).
+	inferred  36 Multiplexer(s).
+Unit <regfile> synthesized.
+
+Synthesizing Unit <signext>.
+    Related source file is "/users/administrator/desktop/mips/cpu/signext.v".
+WARNING:Xst:647 - Input <data_16<5:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit 3-to-1 multiplexer for signal <data> created at line 21.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <signext> synthesized.
+
+Synthesizing Unit <alu>.
+    Related source file is "/users/administrator/desktop/mips/cpu/alu.v".
+    Found 32-bit subtractor for signal <SrcA[31]_SrcB[31]_sub_2_OUT> created at line 35.
+    Found 32-bit adder for signal <SrcA[31]_SrcB[31]_add_0_OUT> created at line 34.
+    Found 32-bit shifter logical left for signal <SrcA[31]_SrcB[4]_shift_left_8_OUT> created at line 45
+    Found 32-bit shifter logical right for signal <SrcA[31]_SrcB[4]_shift_right_10_OUT> created at line 47
+    Found 32-bit 11-to-1 multiplexer for signal <AluCtrl[3]_X_8_o_wide_mux_11_OUT> created at line 32.
+    Found 32-bit comparator greater for signal <SrcA[31]_SrcB[31]_LessThan_8_o> created at line 42
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+	inferred  13 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <alu> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 30-bit adder                                          : 1
+ 32-bit adder                                          : 1
+ 32-bit addsub                                         : 1
+# Registers                                            : 3
+ 1024-bit register                                     : 1
+ 32-bit register                                       : 2
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 71
+ 1-bit 2-to-1 multiplexer                              : 10
+ 30-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 52
+ 32-bit 3-to-1 multiplexer                             : 2
+ 32-bit 32-to-1 multiplexer                            : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 30-bit adder                                          : 1
+ 32-bit adder                                          : 1
+ 32-bit addsub                                         : 1
+# Registers                                            : 1088
+ Flip-Flops                                            : 1088
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 102
+ 1-bit 2-to-1 multiplexer                              : 42
+ 30-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 51
+ 32-bit 3-to-1 multiplexer                             : 2
+ 32-bit 32-to-1 multiplexer                            : 2
+ 4-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 2
+# Logic shifters                                       : 2
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 32-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <MIPS> ...
+
+Optimizing unit <datapath> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <regfile> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MIPS, actual ratio is 37.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1088
+ Flip-Flops                                            : 1088
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : MIPS.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2819
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 29
+#      LUT2                        : 67
+#      LUT3                        : 1050
+#      LUT4                        : 203
+#      LUT5                        : 146
+#      LUT6                        : 1107
+#      MUXCY                       : 107
+#      MUXF7                       : 15
+#      VCC                         : 1
+#      XORCY                       : 92
+# FlipFlops/Latches                : 1088
+#      FDCE                        : 1024
+#      FDCE_1                      : 32
+#      FDR                         : 32
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 164
+#      IBUF                        : 66
+#      OBUF                        : 98
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1088  out of  18224     5%  
+ Number of Slice LUTs:                 2603  out of   9112    28%  
+    Number used as Logic:              2603  out of   9112    28%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2608
+   Number with an unused Flip Flop:    1520  out of   2608    58%  
+   Number with an unused LUT:             5  out of   2608     0%  
+   Number of fully used LUT-FF pairs:  1083  out of   2608    41%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                         165
+ Number of bonded IOBs:                 165  out of    232    71%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 1088  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 13.700ns (Maximum Frequency: 72.993MHz)
+   Minimum input arrival time before clock: 17.988ns
+   Maximum output required time after clock: 13.464ns
+   Maximum combinational path delay: 17.168ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 13.700ns (frequency: 72.993MHz)
+  Total number of paths / destination ports: 18724089 / 1088
+-------------------------------------------------------------------------
+Delay:               13.700ns (Levels of Logic = 13)
+  Source:            dp/rf/gr_0_342 (FF)
+  Destination:       dp/pc_dp_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: dp/rf/gr_0_342 to dp/pc_dp_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   0.927  dp/rf/gr_0_342 (dp/rf/gr_0_342)
+     LUT6:I2->O            1   0.254   0.856  dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_944 (dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_944)
+     LUT6:I2->O            2   0.254   0.725  dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_414 (dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_414)
+     LUT4:I2->O            5   0.250   0.715  dp/rf/Mmux_BusB151 (writedata_22_OBUF)
+     LUT6:I5->O           11   0.254   1.159  dp/Mmux_oper_a151 (dp/oper_a<22>)
+     LUT6:I2->O            4   0.254   0.912  dp/alu_/Sh1181 (dp/alu_/Sh118)
+     LUT6:I3->O            2   0.235   0.617  dp/alu_/Sh1461 (dp/alu_/Sh146)
+     LUT6:I5->O            1   0.254   0.808  dp/alu_/Mmux_result242 (dp/alu_/Mmux_result241)
+     LUT6:I3->O            3   0.235   0.927  dp/alu_/Mmux_result249 (memaddr_18_OBUF)
+     LUT6:I2->O            3   0.254   0.651  dp/alu_/zero1 (dp/alu_/zero)
+     LUT5:I4->O            1   0.254   0.000  dp/alu_/zero8_SW2_G (N452)
+     MUXF7:I1->O           2   0.175   0.617  dp/alu_/zero8_SW2 (N333)
+     LUT6:I5->O           16   0.254   1.005  dp/npc/PcSrc5 (dp/pcSrc)
+     LUT6:I5->O            1   0.254   0.000  dp/Mmux_Jr_busA[31]_wide_mux_6_OUT251 (dp/Jr_busA[31]_wide_mux_6_OUT<31>)
+     FDR:D                     0.074          dp/pc_dp_31
+    ----------------------------------------
+    Total                     13.700ns (3.780ns logic, 9.920ns route)
+                                       (27.6% logic, 72.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 28627725 / 3200
+-------------------------------------------------------------------------
+Offset:              17.988ns (Levels of Logic = 26)
+  Source:            instr<29> (PAD)
+  Destination:       dp/pc_dp_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: instr<29> to dp/pc_dp_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            50   1.228   1.776  instr_29_IBUF (instr_29_IBUF)
+     LUT5:I2->O            4   0.235   0.684  actrler/Mmux_alu_ctrl2211 (N13)
+     LUT5:I4->O           29   0.254   1.478  mctrller/Mmux_Jr111 (N37)
+     LUT4:I1->O          107   0.235   1.896  mctrller/ExtOp<1>1 (alusrc1)
+     LUT6:I5->O           20   0.254   1.548  dp/ExtOp<1> (dp/ExtOp<1>_mmx_out)
+     LUT6:I0->O            5   0.254   0.823  dp/Mmux_oper_b81 (dp/oper_b<16>)
+     LUT6:I4->O            0   0.250   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_A81 (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_A<16>)
+     MUXCY:DI->O           1   0.181   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<16> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<17> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<18> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<19> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<20> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<21> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<22> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<23> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<24> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<25> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<26> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_cy<26>)
+     XORCY:CI->O           2   0.206   0.617  dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_rs_xor<27> (dp/alu_/Mmux_AluCtrl[3]_X_8_o_wide_mux_11_OUT2_split<27>)
+     LUT5:I4->O            1   0.254   0.688  dp/alu_/Mmux_result539_SW1 (N416)
+     LUT6:I4->O            3   0.250   1.106  dp/alu_/Mmux_result539 (memaddr_27_OBUF)
+     LUT6:I0->O            3   0.254   0.651  dp/alu_/zero1 (dp/alu_/zero)
+     LUT5:I4->O            1   0.254   0.000  dp/alu_/zero8_SW2_G (N452)
+     MUXF7:I1->O           2   0.175   0.617  dp/alu_/zero8_SW2 (N333)
+     LUT6:I5->O           16   0.254   1.005  dp/npc/PcSrc5 (dp/pcSrc)
+     LUT6:I5->O            1   0.254   0.000  dp/Mmux_Jr_busA[31]_wide_mux_6_OUT251 (dp/Jr_busA[31]_wide_mux_6_OUT<31>)
+     FDR:D                     0.074          dp/pc_dp_31
+    ----------------------------------------
+    Total                     17.988ns (5.098ns logic, 12.889ns route)
+                                       (28.3% logic, 71.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 246784 / 96
+-------------------------------------------------------------------------
+Offset:              13.464ns (Levels of Logic = 10)
+  Source:            dp/rf/gr_0_329 (FF)
+  Destination:       memaddr<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: dp/rf/gr_0_329 to memaddr<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   0.927  dp/rf/gr_0_329 (dp/rf/gr_0_329)
+     LUT6:I2->O            1   0.254   0.856  dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_995 (dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_995)
+     LUT6:I2->O            2   0.254   0.725  dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_431 (dp/rf/Mmux_RB[4]_gr[31][31]_wide_mux_39_OUT_431)
+     LUT4:I2->O            6   0.250   0.745  dp/rf/Mmux_BusB321 (writedata_9_OBUF)
+     LUT6:I5->O            9   0.254   1.106  dp/Mmux_oper_a321 (dp/oper_a<9>)
+     LUT6:I2->O            5   0.254   0.991  dp/alu_/Sh111 (dp/alu_/Sh11)
+     LUT6:I2->O            2   0.254   0.617  dp/alu_/Sh471 (dp/alu_/Sh47)
+     LUT6:I5->O            1   0.254   0.580  dp/alu_/Mmux_result679 (dp/alu_/Mmux_result678)
+     LUT6:I5->O            3   0.254   0.651  dp/alu_/Mmux_result6711 (dp/alu_/Mmux_result6710)
+     LUT6:I5->O            6   0.254   0.744  dp/alu_/Mmux_result6712 (dp/negative_dp)
+     OBUF:I->O                 2.715          memaddr_31_OBUF (memaddr<31>)
+    ----------------------------------------
+    Total                     13.464ns (5.522ns logic, 7.942ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 374539 / 98
+-------------------------------------------------------------------------
+Delay:               17.168ns (Levels of Logic = 11)
+  Source:            instr<29> (PAD)
+  Destination:       memaddr<31> (PAD)
+
+  Data Path: instr<29> to memaddr<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            50   1.228   1.776  instr_29_IBUF (instr_29_IBUF)
+     LUT5:I2->O            4   0.235   0.684  actrler/Mmux_alu_ctrl2211 (N13)
+     LUT5:I4->O           29   0.254   1.478  mctrller/Mmux_Jr111 (N37)
+     LUT4:I1->O          107   0.235   2.351  mctrller/ExtOp<1>1 (alusrc1)
+     LUT6:I0->O            9   0.254   1.106  dp/Mmux_oper_a321 (dp/oper_a<9>)
+     LUT6:I2->O            5   0.254   0.991  dp/alu_/Sh111 (dp/alu_/Sh11)
+     LUT6:I2->O            2   0.254   0.617  dp/alu_/Sh471 (dp/alu_/Sh47)
+     LUT6:I5->O            1   0.254   0.580  dp/alu_/Mmux_result679 (dp/alu_/Mmux_result678)
+     LUT6:I5->O            3   0.254   0.651  dp/alu_/Mmux_result6711 (dp/alu_/Mmux_result6710)
+     LUT6:I5->O            6   0.254   0.744  dp/alu_/Mmux_result6712 (dp/negative_dp)
+     OBUF:I->O                 2.715          memaddr_31_OBUF (memaddr<31>)
+    ----------------------------------------
+    Total                     17.168ns (6.191ns logic, 10.977ns route)
+                                       (36.1% logic, 63.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   13.700|    3.618|    2.542|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 41.00 secs
+Total CPU time to Xst completion: 41.72 secs
+ 
+--> 
+
+Total memory usage is 256076 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

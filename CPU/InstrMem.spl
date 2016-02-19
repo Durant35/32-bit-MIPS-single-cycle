@@ -1,0 +1,8 @@
+[Inputs]
+=InstrAddr[31:0]=
+[Outputs]
+=Instr[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel InstrMem
+

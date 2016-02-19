@@ -1,0 +1,15 @@
+[Inputs]
+clk
+r_st
+=instr[31:0]=
+=readdata[31:0]=
+[Outputs]
+memwrite
+memread
+=pc[31:0]=
+=memaddr[31:0]=
+=writedata[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel MIPS
+

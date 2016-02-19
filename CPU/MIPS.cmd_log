@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+vhdtdtfi -lib work C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.v -lang verilog -prj CPU -o MIPS.spl -module MIPS -template D:/Xilinx/12.3/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 MIPS.spl C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.sym 
+vhdtdtfi -lang verilog -prj CPU -o C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.tfi -lib work C:/Users/Administrator/Desktop/MIPS/CPU//MIPS.v -module MIPS -template D:/Xilinx/12.3/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 
+xst -intstyle ise -ifn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.xst" -ofn "C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.syr" 

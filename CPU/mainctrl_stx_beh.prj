@@ -1,0 +1,2 @@
+verilog isim_temp "mainctrl.v"
+verilog isim_temp "D:/Xilinx/12.3/ISE_DS/ISE//verilog/src/glbl.v"

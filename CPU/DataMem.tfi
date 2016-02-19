@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+DataMem instance_name (
+    .clk(clk), 
+    .r_st(r_st), 
+    .wr_en(wr_en), 
+    .rd_en(rd_en), 
+    .DataAddr(DataAddr), 
+    .data_wr(data_wr), 
+    .data_rd(data_rd)
+    );
+
+

@@ -1,0 +1,13 @@
+[Inputs]
+clk
+r_st
+wr_en
+rd_en
+=DataAddr[31:0]=
+=data_wr[31:0]=
+[Outputs]
+=data_rd[31:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel DataMem
+

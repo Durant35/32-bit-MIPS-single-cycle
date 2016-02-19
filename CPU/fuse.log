@@ -1,0 +1,41 @@
+Running: D:\Xilinx\12.3\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Administrator/Desktop/MIPS/CPU/top_tb_isim_beh.exe -prj C:/Users/Administrator/Desktop/MIPS/CPU/top_tb_beh.prj work.top_tb work.glbl 
+ISim M.70d (signature 0x36e8438f)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/signext.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/regfile.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/nextpc.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/alu.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/mainctrl.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/datapath.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/aluctrl.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/MIPS.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/InstrMem.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/DataMem.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/top.v\" into library work
+Analyzing Verilog file \"C:/Users/Administrator/Desktop/MIPS/CPU/top_tb.v\" into library work
+Analyzing Verilog file \"D:/Xilinx/12.3/ISE_DS/ISE//verilog/src/glbl.v\" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 113312 KB
+Fuse CPU Usage: 186 ms
+Compiling module mainctrl
+Compiling module aluctrl
+Compiling module nextpc
+Compiling module regfile
+Compiling module signext
+Compiling module alu
+Compiling module datapath
+Compiling module MIPS
+Compiling module InstrMem
+Compiling module DataMem
+Compiling module top
+Compiling module top_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 6 sub-compilation(s) to finish...
+Compiled 13 Verilog Units
+Built simulation executable C:/Users/Administrator/Desktop/MIPS/CPU/top_tb_isim_beh.exe
+Fuse Memory Usage: 119952 KB
+Fuse CPU Usage: 482 ms

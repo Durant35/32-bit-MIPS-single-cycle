@@ -1,0 +1,3 @@
+vhdtdtfi -lib work C:/Users/Administrator/Desktop/MIPS/CPU/DataMem.v -lang verilog -prj CPU -o DataMem.spl -module DataMem -template D:/Xilinx/12.3/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 DataMem.spl C:/Users/Administrator/Desktop/MIPS/CPU/DataMem.sym 
+vhdtdtfi -lang verilog -prj CPU -o C:/Users/Administrator/Desktop/MIPS/CPU/DataMem.tfi -lib work C:/Users/Administrator/Desktop/MIPS/CPU//DataMem.v -module DataMem -template D:/Xilinx/12.3/ISE_DS/ISE//data/tfi.tft -deleteonerror 
