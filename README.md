@@ -13,4 +13,8 @@
 	└── MIPS体系结构与编程.pdf		指令集设计参考资料
 
 ## 内容
-<center><img src="/block diagram.png" width="500px"></center>
+<img src="/block diagram.png" width="800px">
+　　+ 指令集设计，参考MIPS指令集。  
+　　+ Datapath设计，参考上图，分模块实现。 
+　　+ P(rogram)C(ounter)的计算，主要设计跳转指令的处理。   
+　　+ Instruction Memory和Data Memory的模拟仿真。  
