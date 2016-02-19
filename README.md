@@ -17,5 +17,5 @@
 
 + 指令集设计，参考MIPS指令集。  
 + Datapath设计，参考上图，分模块实现。  
-+ P(rogram)C(ounter)的计算，主要设计跳转指令的处理。   
++ P(rogram)C(ounter)的计算，主要涉及跳转指令的处理。   
 + Instruction Memory和Data Memory的模拟仿真。  
