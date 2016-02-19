@@ -13,4 +13,4 @@
 	└── MIPS体系结构与编程.pdf		指令集设计参考资料
 
 ## 内容
-<center><img src="/block diagram.png"></center>
+<center><img src="/block diagram.png" width="500px"></center>
